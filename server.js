@@ -34,9 +34,8 @@ app.set("view engine", "handlebars");
 // By default mongoose uses callbacks for async queries, we're setting it to use promises (.then syntax) instead
 // Connect to the Mongo DB
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/newscraper" || "mongodb://heroku_rzppcm1v:o87sdpis44npn72v6p1e1mmg69@ds117111.mlab.com:17111/heroku_rzppcm1v", {
-  useMongoClient: true
-});
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+mongoose.connect(MONGODB_URI);
 
 require("./routes/api-routes.js")(app);
 
