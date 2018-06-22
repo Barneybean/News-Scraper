@@ -1,5 +1,6 @@
 $.get("/", function (result) {
   console.log("loaded");
+  console.log(result);
   // $(".article-container").html()
 })
 
@@ -51,7 +52,6 @@ $(".addNote").on("click", function () {
       // noteBody.text(dbNote[i].body);
       $(".allNote").append(noteBody);
     }
-
   })
 
 })
