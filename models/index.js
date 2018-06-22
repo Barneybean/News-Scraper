@@ -2,5 +2,6 @@
 
 module.exports = {
   article: require("./Article"),
-  Note: require("./Note")
+  Note: require("./Note"),
+  saved: require("./Saved")
 };
